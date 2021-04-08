@@ -14,3 +14,9 @@
 <button>Add to Cart!!</button>
             }
 
+@foreach(var prod in Model.Products)
+            {
+                <h2>@prod.ProductName</h2>
+                <p>@prod.Price</p>
+                <p>@prod.ProductDescription</p>
+            }

@@ -19,7 +19,7 @@ namespace WEB1001Review.Pages.Admin
             _context = context;
         }
 
-        public IList<Product> Product { get;set; }
+        public IList<Models.Product> Product { get;set; }
 
         public async Task OnGetAsync()
         {

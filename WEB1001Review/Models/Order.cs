@@ -1,5 +1,4 @@
-﻿using DataAnnotationsExtensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,9 +13,9 @@ namespace WEB1001Review.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderID { get; set; }
 
-        [Email]
+        [EmailAddress]
         public string User { get; set; }
 
-        public ICollection<Product> Products;
+        public ICollection<Models.Product> Products;
     }
 }
