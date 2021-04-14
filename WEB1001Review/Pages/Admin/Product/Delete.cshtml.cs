@@ -24,12 +24,19 @@ namespace WEB1001Review.Pages.Admin
         [BindProperty]
         public Models.Product Product { get; set; }
 
+        List<Models.Product> Done = new List<Models.Product>();
+        List<Models.Product> Next = new List<Models.Product>();
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
+
+            Done = _context.Products.Where(prod => prod.Price > 5.00M).ToList();
+
+            Next = _context.Products.Where(prod => prod.OrderID > 9).ToList();
 
             Product = await _context.Products
                 .Include(p => p.Order).FirstOrDefaultAsync(m => m.ProductID == id);

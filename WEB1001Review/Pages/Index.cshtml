@@ -19,4 +19,8 @@
                 <h2>@prod.ProductName</h2>
                 <p>@prod.Price</p>
                 <p>@prod.ProductDescription</p>
+                <form asp-action="Edit">
+                    <input type="hidden" name="ProductID" value="@prod.ProductID" />
+                    <button>Complete</button>
+                </form>
             }
